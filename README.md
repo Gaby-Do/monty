@@ -1,5 +1,7 @@
 # Stacks, Queues - LIFO, FIFO
 
+![image](https://github.com/Gaby-Do/monty/blob/master/images/portada.png)
+
 We are Software Engineer students at  [Holberton School](https://www.holbertonschool.com/) and as part of our trip we have to create an interpreter for Monty ByteCodes files with functions related with Stacks and Queues.
 
 
@@ -29,6 +31,7 @@ We are Software Engineer students at  [Holberton School](https://www.holbertonsc
 - All your header files should be include guarded
 
 ## Given data structure
+![image](https://github.com/Gaby-Do/monty/blob/master/images/estructura.png)
 
 ## Projects files structure
 
