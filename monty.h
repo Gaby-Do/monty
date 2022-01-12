@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 #define DELIM "\t\n "
 
@@ -49,4 +50,6 @@ void _nop(stack_t **stack, unsigned int line_number);
 
 /* Prototyoe of auxiliary functions */
 int get_opcode(FILE *file);
+
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 #endif

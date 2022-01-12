@@ -13,18 +13,28 @@ void _push(stack_t **stack, unsigned int line_number)
 	int n = 0;
 	stack_t *new = NULL;
 
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+	{
+		fprintf(stderr, "L%d: usage: can't malloc\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	arg = strtok(NULL, DELIM);
+	if (arg == NULL)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free(new);
+		exit(EXIT_FAILURE);
+	}
 	n = atoi(arg);
 	if (n == 0 && arg[0] != 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	new = malloc(sizeof(stack_t));
-	if (new == NULL)
-		return;
 	new->n = n;
 	new->prev = NULL;
+	printf("n .... %d\n", new->n);
 	if (!*stack)
 	{
 		new->next = NULL;
@@ -50,7 +60,8 @@ void _pall(stack_t **stack, unsigned int line_number)
 {
 	(void) line_number;
 
-	if (!*stack)
+	puts("entre a pall");
+	if (!stack)
 		return;
 	while (*stack)
 	{
