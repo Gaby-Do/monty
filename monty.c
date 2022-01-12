@@ -6,7 +6,7 @@
  *@argv: vector of arguments
  *Return: integer
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	FILE file;
 	char *str = NULL, **tok = NULL;
