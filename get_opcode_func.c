@@ -23,7 +23,7 @@ int get_opcode(char *str, stack_t **stack, unsigned int line_number)
 	int i = 0;
 	char *tok = NULL;
 
-	tok = tokenizar(str);
+	tok = strtok(str, DELIM);
 	while (ops[i].opcode)
 	{
 		if (strcmp(tok, ops[i].opcode) == 0)

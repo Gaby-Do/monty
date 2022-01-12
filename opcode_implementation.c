@@ -9,8 +9,33 @@
 
 void _push(stack_t **stack, unsigned int line_number)
 {
-	(void) (*stack);
-	(void) line_number;
+	char *arg = NULL;
+	int n = 0;
+	stack_t *new = NULL;
+
+	arg = strtok(NULL, DELIM);
+	n = atoi(arg);
+	if (n == 0 && arg[0] != 0)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+		return;
+	new->n = n;
+	new->prev = NULL;
+	if (!*stack)
+	{
+		new->next = NULL;
+		*stack = new;
+	}
+	else
+	{
+		new->next = *stack;
+		(*stack)->prev = new;
+		*stack = new;
+	}
 	printf("this the _push function\n");
 }
 
