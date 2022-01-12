@@ -2,13 +2,11 @@
 
 /**
  *get_opcode - function that gets the right function
- *@str: pointer to line with opcode
- *@stack: doble pointer to a my stack
- *@line_number: line read
+ *@file: pointer to all content from file
  *Return: 0
  */
 
-int get_opcode(char *str)
+int get_opcode(FILE *file)
 {
 	instruction_t ops[] = {
 		{"push", _push},
@@ -21,18 +19,24 @@ int get_opcode(char *str)
 		{NULL, NULL}
 	};
 	int i = 0;
-	char *tok = NULL;
-	char **stack_t = NULL;
+	char *tok = NULL, *str = NULL;
+	stack_t **stack = NULL;
 	unsigned int line_number = 0;
 
-	tok = strtok(str, DELIM);
-	while (ops[i].opcode)
+	while (1)
 	{
-		if (strcmp(tok, ops[i].opcode) == 0)
+		if (getline(&str, NULL, file) == -1)
+			break;
+		line_number++;
+		tok = strtok(str, DELIM);
+		while (ops[i].opcode)
 		{
-			ops[i].f(stack, line_number);
-		}
+			if (strcmp(tok, ops[i].opcode) == 0)
+			{
+				ops[i].f(stack, line_number);
+			}
 		i++;
+		}
 	}
 	return (0);
 }
