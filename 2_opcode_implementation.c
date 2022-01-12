@@ -15,10 +15,10 @@ void _add(stack_t **stack, unsigned int line_number)
 
 	printf("this the _add function\n");
 	if (!*stack || !(*stack)->next)
-		{
-			fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-			exit(EXIT_FAILURE);
-		}
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	num1 = (*stack)->n;
 	num2 = (*stack)->next->n;
 	sum = num1 + num2;
