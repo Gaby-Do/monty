@@ -34,7 +34,6 @@ void _push(stack_t **stack, unsigned int line_number)
 	}
 	new->n = n;
 	new->prev = NULL;
-	printf("n .... %d\n", new->n);
 	if (!*stack)
 	{
 		new->next = NULL;
@@ -60,8 +59,7 @@ void _pall(stack_t **stack, unsigned int line_number)
 {
 	(void) line_number;
 
-	puts("entre a pall");
-	if (!stack)
+	if (!*stack)
 		return;
 	while (*stack)
 	{
