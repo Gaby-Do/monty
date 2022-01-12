@@ -8,7 +8,7 @@
  *Return: 0
  */
 
-int get_opcode(char *str)
+int get_opcode(char *str, stack_t **stack, unsigned int line_number)
 {
 	instruction_t ops[] = {
 		{"push", _push},
@@ -22,8 +22,6 @@ int get_opcode(char *str)
 	};
 	int i = 0;
 	char *tok = NULL;
-	char **stack_t = NULL;
-	unsigned int line_number = 0;
 
 	tok = strtok(str, DELIM);
 	while (ops[i].opcode)
