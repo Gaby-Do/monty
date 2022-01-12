@@ -2,15 +2,15 @@
 
 /**
  *get_opcode - function that gets the right function
- *@tok: pointer to array of chars
- *@stack: doble pointer to a array
+ *@str: pointer to line with opcode
+ *@stack: doble pointer to a my stack
  *@line_number: line read
  *Return: 0
  */
 
-int get_opcode(char *tok, stack_t **stack, unsigned int line_number)
+int get_opcode(char *str, stack_t **stack, unsigned int line_number)
 {
-	instructions_t ops[] = {
+	instruction_t ops[] = {
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
@@ -21,15 +21,16 @@ int get_opcode(char *tok, stack_t **stack, unsigned int line_number)
 		{NULL, NULL}
 	};
 	int i = 0;
+	char *tok = NULL;
 
+	tok = tokenizar(str);
 	while (ops[i].opcode)
 	{
-		if (strcmp(opcode, opcode_list[i].opcode) == 0)
+		if (strcmp(tok, ops[i].opcode) == 0)
 		{
-			return (ops[i].f(stack, line_number));
+			ops[i].f(stack, line_number);
 		}
 		i++;
 	}
-
 	return (0);
 }

@@ -11,7 +11,7 @@ void _push(stack_t **stack, unsigned int line_number)
 {
 	(void) (*stack);
 	(void) line_number;
-	printf("this the _push function");
+	printf("this the _push function\n");
 }
 
 /**
@@ -25,7 +25,7 @@ void _pall(stack_t **stack, unsigned int line_number)
 {
 	(void) (*stack);
 	(void) line_number;
-	printf("this the _pall function");
+	printf("this the _pall function\n");
 }
 
 /**
@@ -39,7 +39,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 {
 	(void) (*stack);
 	(void) line_number;
-	printf("this the _pint function");
+	printf("this the _pint function\n");
 }
 
 /**
@@ -53,7 +53,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 {
 	(void) (*stack);
 	(void) line_number;
-	printf("this the _pop function");
+	printf("this the _pop function\n");
 }
 
 /**
@@ -67,5 +67,5 @@ void _swap(stack_t **stack, unsigned int line_number)
 {
 	(void) (*stack);
 	(void) line_number;
-	printf("this the _swap function");
+	printf("this the _swap function\n");
 }

@@ -51,5 +51,6 @@ void _nop(stack_t **stack, unsigned int line_number);
 /**
  * Prototyoe of auxiliary functions
  */
-int get_opcode(char *tok, stack_t **stack, unsigned int line_number);
+int get_opcode(char *str, stack_t **stack, unsigned int line_number);
+char *tokenizar(char *str);
 #endif
