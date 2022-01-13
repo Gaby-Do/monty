@@ -20,7 +20,7 @@ int get_opcode(FILE *file)
 		{"sub", _sub},
 		{NULL, NULL}
 	};
-	int i = 0, a = 0;
+	int i = 0;
 	char *tok = NULL, *str = NULL;
 	stack_t *stack = NULL;
 	unsigned int line_number = 1;
@@ -28,8 +28,7 @@ int get_opcode(FILE *file)
 
 	while (1)
 	{
-		a = getline(&str, &size, file);
-		if (a == -1)
+		if (getline(&str, &size, file) == -1)
 		{
 			free(str);
 			break;
@@ -37,15 +36,19 @@ int get_opcode(FILE *file)
 		line_number++;
 		tok = strtok(str, DELIM);
 		i = 0;
-		while (ops[i].opcode)
+		if (tok)
 		{
-			if (strcmp(tok, ops[i].opcode) == 0)
+			while (ops[i].opcode)
 			{
-				ops[i].f(&stack, line_number);
+				if (strcmp(tok, ops[i].opcode) == 0)
+				{
+					ops[i].f(&stack, line_number);
+				}
+			i++;
 			}
-		i++;
 		}
 	}
-	free_stackt(stack);
+	if (stack)
+		free_stackt(stack);
 	return (0);
 }
