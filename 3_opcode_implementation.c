@@ -44,6 +44,11 @@ void _mod(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	num1 = (*stack)->n;
+	if (num1 == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	num2 = (*stack)->next->n;
 	mod = num2 % num1;
 	_pop(stack, line_number);

@@ -17,6 +17,10 @@ We are Software Engineer students at  [Holberton School](https://www.holbertonsc
 - Implement the swap opcode: The opcode swap swaps the top two elements of the stack.
 - Implement the add opcode: The opcode add adds the top two elements of the stack.
 - Implement the nop opcode: The opcode nop doesn’t do anything.
+- Implement the sub opcode: The opcode sub subtracts the top element of the stack from the second.
+- Implement the div opcode: The opcode div divides the second top element of the stack by the top element.
+- Implement the mul opcode: The opcode mul multiplies the second top element of the stack with the top element.
+- Implement the mod opcode: The opcode mod computes the rest of the division of the second top element by the top element. 
 
 ## General Requirements
 - Allowed editors: vi, vim, emacs
@@ -36,22 +40,25 @@ We are Software Engineer students at  [Holberton School](https://www.holbertonsc
 ## Projects files structure
 
 ### Header 
-In the header (monti.h) you can find, on one hand all the libraries used, as well as the prototype of all the functions developed for the purpose of this project. And on the other hand you can find the declaration of the used environment variables and the data structures 
+In the header (monty.h) you can find, on one hand all the libraries used, as well as the prototype of all the functions developed for the purpose of this project. And on the other hand you can find the declaration of the used environment variables and the data structures 
 
 ### Main
 here (monty.c)is the core code of the project.
 
 ### Opcode implementations 
-In these files you can find the functions developed for the global operation of the project.
+In these files you can find the functions developed for the opcode implementation.
+
+### Auxiliary functions
+All other functions we needed for running the project.
 
 ## Compilation
 This project  was compiled this way:
 
 ```
-$ gcc -Wall -Werror -Wextra -pedantic -std=c90 *.c -o monty
+$ gcc -g -Wall -Werror -Wextra -pedantic -std=c90 *.c -o monty
 ```
 #### Authors: 
-@ [Gabriela Dominguez](https://github.com/Gabi-Do) &  [Marcela Carrasco](https://github.com/mcarrascopiaggio)
+@ [Gabriela Dominguez](https://github.com/Gaby-Do) &  [Marcela Carrasco](https://github.com/mcarrascopiaggio)
 
 
 
