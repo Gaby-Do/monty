@@ -31,7 +31,7 @@ int get_opcode(FILE *file)
 		a = getline(&str, &size, file);
 		if (a == -1)
 		{
-		/*	free(str);*/
+			free(str);
 			break;
 		}
 		line_number++;
@@ -44,9 +44,9 @@ int get_opcode(FILE *file)
 				ops[i].f(&stack, line_number);
 			}
 		i++;
-		/*free(str);*/
 		}
+		free(str);
 	}
-/**free stack con funcion de free linked list*/
+	free_stackt(stack);
 	return (0);
 }
