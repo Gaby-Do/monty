@@ -45,7 +45,6 @@ int get_opcode(FILE *file)
 			}
 		i++;
 		}
-		free(str);
 	}
 	free_stackt(stack);
 	return (0);
