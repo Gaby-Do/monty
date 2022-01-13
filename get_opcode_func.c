@@ -17,6 +17,7 @@ int get_opcode(FILE *file)
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
+		{"sub", _sub},
 		{NULL, NULL}
 	};
 	int i = 0, a = 0;
@@ -29,7 +30,10 @@ int get_opcode(FILE *file)
 	{
 		a = getline(&str, &size, file);
 		if (a == -1)
+		{
+		/*	free(str);*/
 			break;
+		}
 		line_number++;
 		tok = strtok(str, DELIM);
 		i = 0;
@@ -40,7 +44,9 @@ int get_opcode(FILE *file)
 				ops[i].f(&stack, line_number);
 			}
 		i++;
+		/*free(str);*/
 		}
 	}
+/**free stack con funcion de free linked list*/
 	return (0);
 }

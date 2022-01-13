@@ -16,7 +16,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		fprintf(stderr, "L%d: usage: can't malloc\n", line_number);
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	arg = strtok(NULL, DELIM);
@@ -24,12 +24,16 @@ void _push(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free(new);
+		/* if stack -> free stack*/
 		exit(EXIT_FAILURE);
 	}
+	/* chequear arg solo digitos*/
 	n = atoi(arg);
 	if (n == 0 && arg[0] != 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free(new);
+		/* if stack -> free stack*/
 		exit(EXIT_FAILURE);
 	}
 	new->n = n;

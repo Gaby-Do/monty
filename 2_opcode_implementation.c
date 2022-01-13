@@ -37,6 +37,8 @@ void _nop(stack_t **stack, unsigned int line_number)
 {
 	(void) (*stack);
 	(void) line_number;
+
+	puts("estoy en nop");
 }
 
 /**
@@ -54,15 +56,13 @@ void _sub(stack_t **stack, unsigned int line_number)
 
 	printf("this the _sub function\n");
 	if (!*stack || !(*stack)->next)
-		{
-			fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-			exit(EXIT_FAILURE);
-		}
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	num1 = (*stack)->n;
 	num2 = (*stack)->next->n;
-	sub = num1 - num2;
-	if (sub < 0)
-		sub = sub * -1;
+	sub = num2 - num1;
 	_pop(stack, line_number);
 	(*stack)->n = sub; /**ver si era este o si era solo -> n*/
 }
