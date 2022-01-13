@@ -13,7 +13,6 @@ void _add(stack_t **stack, unsigned int line_number)
 	int num2 = 0;
 	int sum = 0;
 
-	printf("this the _add function\n");
 	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
@@ -37,8 +36,6 @@ void _nop(stack_t **stack, unsigned int line_number)
 {
 	(void) (*stack);
 	(void) line_number;
-
-	puts("estoy en nop");
 }
 
 /**
@@ -54,7 +51,6 @@ void _sub(stack_t **stack, unsigned int line_number)
 	int num2 = 0;
 	int sub = 0;
 
-	printf("this the _sub function\n");
 	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);

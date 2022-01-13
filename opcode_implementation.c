@@ -49,7 +49,6 @@ void _push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new;
 		*stack = new;
 	}
-	printf("this the _push function\n");
 }
 
 /**
@@ -72,7 +71,6 @@ void _pall(stack_t **stack, unsigned int line_number)
 		printf("%d\n", travel->n);
 		travel = travel->next;
 	}
-	printf("this the _pall function\n");
 }
 
 /**
@@ -90,7 +88,6 @@ void _pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
-	printf("this the _pint function\n");
 }
 
 /**
@@ -118,7 +115,6 @@ void _pop(stack_t **stack, unsigned int line_number)
 		free((*stack)->prev);
 		(*stack)->prev = NULL;
 	}
-	printf("this the _pop function\n");
 }
 
 /**
@@ -142,5 +138,4 @@ void _swap(stack_t **stack, unsigned int line_number)
 	y = (*stack)->next->n;
 	(*stack)->n = y;
 	(*stack)->next->n = x;
-	printf("this the _swap function\n");
 }
