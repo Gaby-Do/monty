@@ -32,11 +32,14 @@ void free_stackt(stack_t *stack)
 {
 	stack_t *prox;
 
-	while (stack)
+	if (stack)
 	{
-		prox = stack->next;
-		free(stack);
-		stack = prox;
+		while (stack)
+		{
+			prox = stack->next;
+			free(stack);
+			stack = prox;
+		}
 	}
 }
 
