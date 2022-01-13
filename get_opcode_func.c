@@ -32,15 +32,10 @@ int get_opcode(FILE *file, instruction_t ops[])
 			{
 				if ((strlen(tok) == strlen(ops[i].opcode)) &&
 						strcmp(tok, ops[i].opcode) == 0)
-					ops[i].f(&stack, line_number);
-				/*else
 				{
-					fprintf(stderr, "L%d: unknown instruction %s\n", line_number, tok);
-					free(str);
-					fclose(file);
-					exit(EXIT_FAILURE);
-				}*/
-			i++;
+					ops[i].f(&stack, line_number);
+				}
+				i++;
 			}
 		}
 	}
