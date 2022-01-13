@@ -4,7 +4,7 @@
  * main - interpreter for Monty ByteCodes files.
  * @argc: number of arguments
  * @argv: vector of arguments
- * Return: int
+ * Return: 0 if ok
  */
 int main(int argc, char *argv[])
 {
