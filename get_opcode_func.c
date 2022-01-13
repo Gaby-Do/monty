@@ -30,7 +30,8 @@ int get_opcode(FILE *file, instruction_t ops[])
 		{
 			while (ops[i].opcode)
 			{
-				if (strcmp(tok, ops[i].opcode) == 0)
+				if ((strlen(tok) == strlen(ops[i].opcode)) &&
+						strcmp(tok, ops[i].opcode) == 0)
 					ops[i].f(&stack, line_number);
 				/*else
 				{
