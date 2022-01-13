@@ -26,8 +26,8 @@ void _push(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free(new);
-		if (*stack)
-			free_stackt(*stack);
+		/*if (*stack)*/
+		free_stackt(*stack);
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(arg);

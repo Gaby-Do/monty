@@ -10,6 +10,17 @@ int main(int argc, char *argv[])
 {
 	FILE *file;
 	char *file_name = NULL;
+	instruction_t ops[] = {
+		{"push", _push},
+		{"pall", _pall},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"add", _add},
+		{"nop", _nop},
+		{"sub", _sub},
+		{NULL, NULL}
+	};
 
 	if (argc != 2)
 	{
@@ -23,7 +34,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", file_name);
 		exit(EXIT_FAILURE);
 	}
-	get_opcode(file);
+	get_opcode(file, ops);
 	fclose(file);
 	return (0);
 }

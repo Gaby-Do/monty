@@ -50,7 +50,7 @@ void _nop(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
 
 /* Prototyoe of auxiliary functions */
-int get_opcode(FILE *file);
+int get_opcode(FILE *file, instruction_t ops[]);
 void free_stackt(stack_t *stack);
 stack_t *add_dnodeint(stack_t **head, const int n);
 int _check_digit(char *arg);

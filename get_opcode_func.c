@@ -4,26 +4,16 @@
 /**
  *get_opcode - function that gets the right function
  *@file: pointer to all content from file
+ *@ops: initialaized structure
  *Return: 0
  */
 
-int get_opcode(FILE *file)
+int get_opcode(FILE *file, instruction_t ops[])
 {
-	instruction_t ops[] = {
-		{"push", _push},
-		{"pall", _pall},
-		{"pint", _pint},
-		{"pop", _pop},
-		{"swap", _swap},
-		{"add", _add},
-		{"nop", _nop},
-		{"sub", _sub},
-		{NULL, NULL}
-	};
 	int i = 0;
 	char *tok = NULL, *str = NULL;
 	stack_t *stack = NULL;
-	unsigned int line_number = 1;
+	unsigned int line_number = 0;
 	size_t size = 0;
 
 	while (1)
