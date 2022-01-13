@@ -20,22 +20,14 @@ void _push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	arg = strtok(NULL, DELIM);
-	if (arg == NULL)
+	if (arg == NULL || _check_digit(arg) == -1)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free(new);
 		/* if stack -> free stack*/
 		exit(EXIT_FAILURE);
 	}
-	/* chequear arg solo digitos*/
 	n = atoi(arg);
-	if (n == 0 && arg[0] != 0)
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		free(new);
-		/* if stack -> free stack*/
-		exit(EXIT_FAILURE);
-	}
 	new->n = n;
 	new->prev = NULL;
 	if (!*stack)

@@ -53,6 +53,7 @@ void _sub(stack_t **stack, unsigned int line_number);
 int get_opcode(FILE *file);
 void free_stackt(stack_t *stack);
 stack_t *add_dnodeint(stack_t **head, const int n);
+int _check_digit(char *arg);
 
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 #endif

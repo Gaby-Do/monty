@@ -39,3 +39,23 @@ void free_stackt(stack_t *stack)
 		stack = prox;
 	}
 }
+
+/**
+ * _check_digit - checks if a string is all digits
+ * @arg: string to check
+ * Return: 0 if all digits or -1 on fail
+ */
+int _check_digit(char *arg)
+{
+	int i = 0;
+
+	if (arg[0] == '-')
+		i = 1;
+	while (arg[i] != '\0')
+	{
+		if (arg[i] < '0' || arg[i] > '9')
+			return (-1);
+		i++;
+	}
+	return (0);
+}
